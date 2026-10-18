@@ -1,0 +1,38 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  port: 5432
+  username: postgres
+  password: <%= ENV["DB_PASSWORD"] %>
+  max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: dota_meta_development
+
+test:
+  <<: *default
+  database: dota_meta_test
+
+production:
+  primary: &primary_production
+    <<: *default
+    database: dota_meta_production
+    username: dota_meta
+    password: <%= ENV["DOTA_META_DATABASE_PASSWORD"] %>
+
+  cache:
+    <<: *primary_production
+    database: dota_meta_production_cache
+    migrations_paths: db/cache_migrate
+
+  queue:
+    <<: *primary_production
+    database: dota_meta_production_queue
+    migrations_paths: db/queue_migrate
+
+  cable:
+    <<: *primary_production
+    database: dota_meta_production_cable
+    migrations_paths: db/cable_migrate

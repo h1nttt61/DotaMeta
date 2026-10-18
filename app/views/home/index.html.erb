@@ -1,0 +1,223 @@
+<div class="dm-page">
+  <header class="dm-header">
+    <div class="dm-logo">
+      <span class="dm-logo-mark">DM</span>
+      <span>DotaMeta</span>
+    </div>
+
+    <nav class="dm-nav">
+      <a href="#meta">Meta</a>
+      <a href="#heroes">Heroes</a>
+      <a href="#builds">Builds</a>
+      <a href="#drafter">Drafter</a>
+    </nav>
+
+    <% if user_signed_in? %>
+      <div class="dm-auth">
+    <span class="dm-user-email">
+      <%= current_user.email %>
+    </span>
+
+        <% if current_user.steam_id.present? %>
+      <span class="dm-steam-connected">
+        Steam подключён
+      </span>
+        <% else %>
+          <%= button_to "Подключить Steam",
+                        "/auth/steam",
+                        method: :post,
+                        form: { data: { turbo: false } },
+                        class: "dm-login-btn" %>
+        <% end %>
+
+        <%= button_to "Выйти",
+                      destroy_user_session_path,
+                      method: :delete,
+                      class: "dm-login-btn" %>
+      </div>
+    <% else %>
+      <div class="dm-auth">
+        <%= link_to "Войти",
+                    new_user_session_path,
+                    class: "dm-login-btn" %>
+
+        <%= link_to "Регистрация",
+                    new_user_registration_path,
+                    class: "dm-login-btn" %>
+      </div>
+    <% end %>
+  </header>
+
+  <main>
+    <section class="dm-hero">
+      <div class="dm-hero-content">
+        <div class="dm-badge">
+          <span class="dm-dot"></span>
+          DOTA 2 META TRACKER
+        </div>
+
+        <h1>
+          Побеждай вместе<br>
+          с <span>метой.</span>
+        </h1>
+
+        <p>
+          Актуальная статистика матчей, билды героев,
+          пики и тренды высокорейтинговой Dota 2.
+        </p>
+
+        <div class="dm-hero-actions">
+          <a href="#meta" class="dm-primary-btn">
+            Смотреть мету →
+          </a>
+
+          <a href="#heroes" class="dm-secondary-btn">
+            Герои
+          </a>
+        </div>
+      </div>
+
+      <div class="dm-hero-card">
+        <div class="dm-card-top">
+          <span>CURRENT PATCH</span>
+          <strong>7.41</strong>
+        </div>
+
+        <div class="dm-card-hero">
+          <div class="dm-hero-avatar">SF</div>
+
+          <div>
+            <small>TOP CARRY</small>
+            <h3>Shadow Fiend</h3>
+            <span>Position 1</span>
+          </div>
+
+          <div class="dm-winrate">
+            <strong>58.4%</strong>
+            <small>WINRATE</small>
+          </div>
+        </div>
+
+        <div class="dm-card-stats">
+          <div>
+            <span>Pick Rate</span>
+            <strong>14.8%</strong>
+          </div>
+
+          <div>
+            <span>Matches</span>
+            <strong>128K</strong>
+          </div>
+
+          <div>
+            <span>Avg. KDA</span>
+            <strong>3.72</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dm-section" id="meta">
+      <div class="dm-section-heading">
+        <div>
+          <span class="dm-section-label">CURRENT META</span>
+          <h2>Что сейчас работает</h2>
+        </div>
+
+        <a href="#" class="dm-view-all">Все герои →</a>
+      </div>
+
+      <div class="dm-meta-grid">
+        <article class="dm-meta-card">
+          <div class="dm-position">POS 1</div>
+          <div class="dm-avatar">SF</div>
+          <h3>Shadow Fiend</h3>
+          <p>Carry</p>
+          <div class="dm-card-footer">
+            <span>Winrate</span>
+            <strong>58.4%</strong>
+          </div>
+        </article>
+
+        <article class="dm-meta-card">
+          <div class="dm-position">POS 2</div>
+          <div class="dm-avatar">ST</div>
+          <h3>Storm Spirit</h3>
+          <p>Mid</p>
+          <div class="dm-card-footer">
+            <span>Winrate</span>
+            <strong>56.9%</strong>
+          </div>
+        </article>
+
+        <article class="dm-meta-card">
+          <div class="dm-position">POS 3</div>
+          <div class="dm-avatar">AX</div>
+          <h3>Axe</h3>
+          <p>Offlane</p>
+          <div class="dm-card-footer">
+            <span>Winrate</span>
+            <strong>55.7%</strong>
+          </div>
+        </article>
+
+        <article class="dm-meta-card">
+          <div class="dm-position">POS 4</div>
+          <div class="dm-avatar">ES</div>
+          <h3>Earth Spirit</h3>
+          <p>Support</p>
+          <div class="dm-card-footer">
+            <span>Winrate</span>
+            <strong>54.8%</strong>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="dm-stats-section">
+      <div class="dm-stat">
+        <strong>2.4M+</strong>
+        <span>Матчей обработано</span>
+      </div>
+
+      <div class="dm-stat">
+        <strong>127</strong>
+        <span>Героев</span>
+      </div>
+
+      <div class="dm-stat">
+        <strong>8.5K+</strong>
+        <span>Высокорейтинговых игроков</span>
+      </div>
+
+      <div class="dm-stat">
+        <strong>24/7</strong>
+        <span>Обновление меты</span>
+      </div>
+    </section>
+
+    <section class="dm-cta" id="drafter">
+      <div>
+        <span class="dm-section-label">COMING SOON</span>
+        <h2>Собери идеальный драфт.</h2>
+        <p>
+          Анализ пиков, контрпики и синергии —
+          всё в одном месте.
+        </p>
+      </div>
+
+      <a href="#" class="dm-primary-btn">
+        Попробовать Drafter →
+      </a>
+    </section>
+  </main>
+
+  <footer class="dm-footer">
+    <div class="dm-logo">
+      <span class="dm-logo-mark">DM</span>
+      <span>DotaMeta</span>
+    </div>
+
+    <span>2026 DotaMeta</span>
+  </footer>
+</div>

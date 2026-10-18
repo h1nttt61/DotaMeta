@@ -1,0 +1,584 @@
+```css
+body {
+    margin: 0;
+    background: #0a0a0a;
+    color: #ddd;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.dm-page {
+    min-height: 100vh;
+}
+
+/* =========================
+   Header
+   ========================= */
+
+.dm-header {
+    width: 1000px;
+    max-width: calc(100% - 32px);
+    height: 60px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #222;
+}
+
+.dm-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dm-logo-mark {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #b51c22;
+    border-radius: 2px;
+
+    color: #fff;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.dm-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.dm-nav a {
+    color: #666;
+    font-size: 12px;
+}
+
+.dm-nav a:hover {
+    color: #bbb;
+}
+
+.dm-login-btn {
+    padding: 7px 11px;
+
+    border: 1px solid #333;
+    border-radius: 2px;
+
+    background: transparent;
+    color: #aaa;
+
+    font-size: 11px;
+}
+
+.dm-login-btn:hover {
+    color: #fff;
+    border-color: #555;
+    background: #151515;
+}
+
+/* =========================
+   Hero
+   ========================= */
+
+.dm-hero {
+    width: 1000px;
+    max-width: calc(100% - 32px);
+
+    min-height: 460px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    gap: 50px;
+    align-items: center;
+}
+
+.dm-badge {
+    display: inline-block;
+
+    margin-bottom: 15px;
+    padding: 5px 7px;
+
+    border: 1px solid #2d2d2d;
+    border-radius: 2px;
+
+    color: #777;
+
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.dm-dot {
+    display: inline-block;
+
+    width: 4px;
+    height: 4px;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+    background: #777;
+}
+
+.dm-hero h1 {
+    margin: 0;
+
+    color: #ddd;
+
+    font-size: 48px;
+    line-height: 1.05;
+    letter-spacing: -1px;
+}
+
+.dm-hero h1 span {
+    color: #b51c22;
+}
+
+.dm-hero-content > p {
+    max-width: 480px;
+
+    margin: 20px 0;
+
+    color: #666;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.dm-hero-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.dm-primary-btn,
+.dm-secondary-btn {
+    display: inline-block;
+
+    padding: 9px 13px;
+
+    border-radius: 2px;
+
+    font-size: 11px;
+}
+
+.dm-primary-btn {
+    background: #b51c22;
+    color: #fff;
+}
+
+.dm-primary-btn:hover {
+    background: #c52128;
+}
+
+.dm-secondary-btn {
+    border: 1px solid #333;
+    color: #777;
+}
+
+.dm-secondary-btn:hover {
+    color: #bbb;
+    border-color: #555;
+}
+
+/* =========================
+   Hero Card
+   ========================= */
+
+.dm-hero-card {
+    padding: 18px;
+
+    border: 1px solid #222;
+    border-radius: 2px;
+
+    background: #101010;
+}
+
+.dm-card-top {
+    display: flex;
+    justify-content: space-between;
+
+    color: #555;
+
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.dm-card-top strong {
+    color: #777;
+}
+
+.dm-card-hero {
+    margin: 25px 0;
+
+    display: grid;
+    grid-template-columns: 45px 1fr auto;
+
+    align-items: center;
+    gap: 10px;
+}
+
+.dm-hero-avatar {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #181818;
+    border: 1px solid #292929;
+    border-radius: 2px;
+
+    color: #777;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.dm-card-hero small,
+.dm-winrate small {
+    color: #555;
+    font-size: 8px;
+}
+
+.dm-card-hero h3 {
+    margin: 3px 0;
+
+    color: #ccc;
+
+    font-size: 13px;
+}
+
+.dm-card-hero span {
+    color: #555;
+    font-size: 10px;
+}
+
+.dm-winrate {
+    text-align: right;
+}
+
+.dm-winrate strong {
+    display: block;
+
+    color: #777;
+    font-size: 15px;
+}
+
+.dm-card-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    padding-top: 14px;
+
+    border-top: 1px solid #222;
+}
+
+.dm-card-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dm-card-stats span {
+    color: #555;
+    font-size: 9px;
+}
+
+.dm-card-stats strong {
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* =========================
+   Sections
+   ========================= */
+
+.dm-section {
+    width: 1000px;
+    max-width: calc(100% - 32px);
+
+    margin: 60px auto;
+}
+
+.dm-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 18px;
+}
+
+.dm-section-label {
+    color: #666;
+
+    font-size: 9px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.dm-section-heading h2 {
+    margin: 5px 0 0;
+
+    color: #ccc;
+
+    font-size: 21px;
+}
+
+.dm-view-all {
+    color: #555;
+    font-size: 10px;
+}
+
+.dm-view-all:hover {
+    color: #999;
+}
+
+/* =========================
+   Meta Cards
+   ========================= */
+
+.dm-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.dm-meta-card {
+    min-height: 150px;
+
+    padding: 15px;
+
+    border: 1px solid #222;
+    border-radius: 2px;
+
+    background: #101010;
+}
+
+.dm-meta-card:hover {
+    border-color: #303030;
+}
+
+.dm-position {
+    color: #555;
+
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.dm-avatar {
+    width: 40px;
+    height: 40px;
+
+    margin: 18px 0 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #181818;
+    border: 1px solid #292929;
+    border-radius: 2px;
+
+    color: #777;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.dm-meta-card h3 {
+    margin: 0;
+
+    color: #bbb;
+
+    font-size: 13px;
+}
+
+.dm-meta-card p {
+    margin: 4px 0 15px;
+
+    color: #555;
+
+    font-size: 10px;
+}
+
+.dm-card-footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #222;
+}
+
+.dm-card-footer span {
+    color: #555;
+    font-size: 9px;
+}
+
+.dm-card-footer strong {
+    color: #777;
+    font-size: 11px;
+}
+
+/* =========================
+   Stats
+   ========================= */
+
+.dm-stats-section {
+    width: 1000px;
+    max-width: calc(100% - 32px);
+
+    margin: 60px auto;
+    padding: 25px 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.dm-stat {
+    text-align: center;
+}
+
+.dm-stat strong {
+    display: block;
+
+    color: #bbb;
+
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.dm-stat span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #555;
+
+    font-size: 9px;
+}
+
+/* =========================
+   CTA
+   ========================= */
+
+.dm-cta {
+    width: 1000px;
+    max-width: calc(100% - 32px);
+
+    margin: 60px auto;
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+    border: 1px solid #242424;
+    border-radius: 2px;
+
+    background: #0f0f0f;
+}
+
+.dm-cta h2 {
+    margin: 5px 0;
+
+    color: #bbb;
+
+    font-size: 21px;
+}
+
+.dm-cta p {
+    margin: 8px 0;
+
+    color: #555;
+
+    font-size: 11px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.dm-footer {
+    width: 1000px;
+    max-width: calc(100% - 32px);
+
+    margin: 0 auto;
+    padding: 25px 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid #222;
+
+    color: #444;
+
+    font-size: 9px;
+}
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 800px) {
+    .dm-nav {
+        display: none;
+    }
+
+    .dm-hero {
+        grid-template-columns: 1fr;
+
+        padding: 50px 0;
+    }
+
+    .dm-meta-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dm-stats-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .dm-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .dm-hero h1 {
+        font-size: 38px;
+    }
+
+    .dm-meta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dm-stats-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dm-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

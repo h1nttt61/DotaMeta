@@ -7,7 +7,7 @@ gem "omniauth-openid"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+gem "pg", "~> 1.7"
 gem "rack-cors"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"

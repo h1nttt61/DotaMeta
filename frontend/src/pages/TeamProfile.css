@@ -1,0 +1,227 @@
+.team-profile {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 24px 60px;
+    color: var(--text);
+}
+
+.team-back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.team-back-link:hover {
+    color: var(--purple-light);
+}
+
+.team-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.team-profile-logo,
+.team-profile-logo-placeholder {
+    width: 110px;
+    height: 110px;
+    flex: 0 0 110px;
+    object-fit: contain;
+    border-radius: 14px;
+    background: var(--surface-hover);
+}
+
+.team-profile-logo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+}
+
+.team-profile-eyebrow {
+    color: var(--purple-light);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.team-profile-heading h1 {
+    margin: 8px 0;
+    font-size: 32px;
+}
+
+.team-profile-tag {
+    color: var(--text-secondary);
+}
+
+.team-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.team-stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.team-stat-card span {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.team-stat-card strong {
+    font-size: 24px;
+}
+
+.team-profile-section {
+    margin-top: 24px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.team-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.team-section-heading h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.team-section-heading span,
+.team-no-data {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.team-players-list,
+.team-matches-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-player-row,
+.team-match-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 12px;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s ease;
+}
+
+.team-player-row:hover,
+.team-match-row:hover {
+    background: var(--surface-hover);
+}
+
+.team-player-row > div,
+.team-match-opponent > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.team-player-row span,
+.team-match-opponent span,
+.team-match-info {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.team-player-record,
+.team-match-info {
+    display: flex;
+    gap: 18px;
+}
+
+.team-match-result {
+    min-width: 90px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.team-match-result.win {
+    color: #35bd82;
+}
+
+.team-match-result.loss {
+    color: #e16b78;
+}
+
+.team-match-opponent {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.team-match-opponent img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 7px;
+}
+
+.team-profile-state {
+    padding: 80px 24px;
+    text-align: center;
+    color: var(--text);
+}
+
+.team-profile-state a {
+    color: var(--purple-light);
+}
+
+@media (max-width: 700px) {
+    .team-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-profile-header {
+        padding: 20px;
+    }
+
+    .team-profile-logo,
+    .team-profile-logo-placeholder {
+        width: 76px;
+        height: 76px;
+        flex-basis: 76px;
+    }
+
+    .team-profile-heading h1 {
+        font-size: 24px;
+    }
+
+    .team-match-row {
+        flex-wrap: wrap;
+    }
+
+    .team-player-record,
+    .team-match-info {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}

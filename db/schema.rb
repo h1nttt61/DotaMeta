@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_17_152116) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_30_205348) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -32,6 +32,24 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_17_152116) do
     t.string "primary_attr"
     t.jsonb "roles"
     t.datetime "updated_at", null: false
+  end
+
+  create_table "regional_players", force: :cascade do |t|
+    t.string "country"
+    t.datetime "created_at", null: false
+    t.integer "current_rank"
+    t.datetime "last_seen_at"
+    t.string "nickname", null: false
+    t.string "normalized_name", null: false
+    t.uuid "player_key", default: -> { "gen_random_uuid()" }, null: false
+    t.string "region", null: false
+    t.bigint "team_id"
+    t.string "team_tag"
+    t.datetime "updated_at", null: false
+    t.index ["player_key"], name: "index_regional_players_on_player_key", unique: true
+    t.index ["region", "current_rank"], name: "index_regional_players_on_region_and_current_rank"
+    t.index ["region", "normalized_name"], name: "index_regional_players_on_region_and_normalized_name"
+    t.index ["region", "team_id"], name: "index_regional_players_on_region_and_team_id"
   end
 
   create_table "user_favorites", force: :cascade do |t|

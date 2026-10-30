@@ -68,10 +68,10 @@ function Navbar() {
                 <Link to="/heroes">Герои</Link>
                 <Link to="/matches">Матчи</Link>
                 <Link to="/draft">Драфтер</Link>
+                <Link to="/leaderboard">Лидерборд</Link>
             </div>
 
             <div className="navbar__actions">
-                {/* Переключатель темы */}
                 <button
                     type="button"
                     className="theme-toggle"

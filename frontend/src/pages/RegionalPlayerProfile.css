@@ -1,0 +1,114 @@
+
+.regional-profile {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px;
+    color: var(--text);
+}
+
+.regional-profile-back {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--purple);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.regional-profile-card {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 36px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.regional-profile-rank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
+    height: 110px;
+    border-radius: 18px;
+    background: var(--purple);
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.regional-profile-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.regional-profile-info h1 {
+    margin: 8px 0;
+    font-size: 36px;
+}
+
+.regional-profile-info p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.regional-profile-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.regional-profile-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.regional-profile-stat span {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.regional-profile-stat strong {
+    font-size: 21px;
+}
+
+.regional-profile-note {
+    margin-top: 24px;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.regional-profile-message {
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--text);
+}
+
+.regional-profile-message a {
+    color: var(--purple);
+}
+
+@media (max-width: 700px) {
+    .regional-profile-card {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 24px;
+    }
+
+    .regional-profile-info h1 {
+        font-size: 28px;
+    }
+
+    .regional-profile-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

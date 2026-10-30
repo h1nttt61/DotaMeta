@@ -21,6 +21,15 @@ Rails.application.routes.draw do
     delete "auth/logout", to: "auth#logout"
     patch "auth/profile", to: "auth#update_profile"
 
+    get "leaderboard", to: "leaderboard#index"
+    post "leaderboard/refresh", to: "leaderboard#refresh"
+    post "leaderboard/broadcast", to: "leaderboard#broadcast"
+    get "players/:account_id", to: "players#show"
+    get "teams", to: "teams#index"
+    get "teams/:id", to: "team_profiles#show"
+    get "regional-leaderboard", to: "regional_leaderboards#index"
+    get "regional-players/:player_key", to: "regional_players#show"
     resources :favorites, only: [:index, :create, :destroy]
   end
+
 end

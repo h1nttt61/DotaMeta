@@ -1,0 +1,241 @@
+
+.player-profile {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px 60px;
+    color: var(--text);
+    transition: color 0.3s ease;
+}
+
+.player-profile-message {
+    padding: 80px 24px;
+    text-align: center;
+    color: var(--text);
+}
+
+.player-profile-message a,
+.profile-back {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+.profile-back {
+    display: inline-block;
+    margin-bottom: 24px;
+    transition: color 0.2s ease;
+}
+
+.profile-back:hover,
+.match-details-link:hover {
+    color: var(--purple-light);
+}
+
+.profile-card {
+    padding: 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.profile-main {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.profile-avatar {
+    width: 112px;
+    height: 112px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+.profile-eyebrow {
+    color: var(--purple);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.profile-main h1 {
+    margin: 8px 0;
+    font-size: 32px;
+    color: var(--text);
+}
+
+.profile-main p {
+    color: var(--text-secondary);
+}
+
+.profile-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 32px;
+}
+
+.profile-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profile-stat span,
+.match-card small {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.profile-stat strong {
+    font-size: 22px;
+    color: var(--text);
+}
+
+.steam-profile-link {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 11px 18px;
+    color: #171a22;
+    background: var(--purple);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity 0.2s ease;
+}
+
+.steam-profile-link:hover {
+    opacity: 0.85;
+}
+
+.matches-section {
+    margin-top: 42px;
+}
+
+.matches-heading h2 {
+    margin-top: 8px;
+    color: var(--text);
+}
+
+.matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.match-card {
+    display: grid;
+    grid-template-columns: 150px 1fr 110px 110px 1.5fr 70px;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.match-card:hover {
+    background: var(--surface-hover);
+}
+
+.match-result,
+.match-hero,
+.match-kda,
+.match-duration {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.match-result span {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.match-result .win {
+    color: #35b77a;
+}
+
+.match-result .loss {
+    color: #e45e67;
+}
+
+.match-hero strong,
+.match-kda strong,
+.match-duration strong {
+    font-size: 14px;
+    color: var(--text);
+}
+
+.match-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.match-item {
+    padding: 5px 8px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--text-secondary);
+}
+
+.match-details-link {
+    color: var(--purple);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+.profile-empty {
+    margin-top: 20px;
+    padding: 30px;
+    text-align: center;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+@media (max-width: 850px) {
+    .match-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .match-items {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 550px) {
+    .player-profile {
+        padding: 20px 14px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-main {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .profile-main h1 {
+        font-size: 26px;
+    }
+
+    .profile-stats {
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .match-card {
+        grid-template-columns: 1fr 1fr;
+        padding: 14px;
+    }
+}
